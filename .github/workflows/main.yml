@@ -24,7 +24,7 @@ jobs:
         run: |
           test -f index.html
           test -f Saksham_Singh_Resume2.pdf
-          test -f Saksham.png
+          test -f saksham.png
 
       - name: Deploy Files to S3
         run: |
