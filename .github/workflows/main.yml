@@ -23,18 +23,18 @@ jobs:
       - name: Verify Website Files
         run: |
           test -f index.html
-          test -f resume.pdf
-          test -f profile.jpg
+          test -f Saksham_Singh_Resume2.pdf
+          test -f Saksham.png
 
       - name: Deploy Files to S3
         run: |
-          aws s3 sync . s3://YOUR_BUCKET_NAME \
+          aws s3 sync . s3://portfolio-website-bucket-123 \
             --exclude ".git/*" \
             --exclude ".github/*" \
             --delete
 
-      - name: Invalidate CloudFront Cache
-        run: |
-          aws cloudfront create-invalidation \
-            --distribution-id YOUR_DISTRIBUTION_ID \
-            --paths "/*"
+      # - name: Invalidate CloudFront Cache
+      #   run: |
+      #     aws cloudfront create-invalidation \
+      #       --distribution-id YOUR_DISTRIBUTION_ID \
+      #       --paths "/*"
