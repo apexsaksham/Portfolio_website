@@ -33,8 +33,8 @@ jobs:
             --exclude ".github/*" \
             --delete
 
-      # - name: Invalidate CloudFront Cache
-      #   run: |
-      #     aws cloudfront create-invalidation \
-      #       --distribution-id YOUR_DISTRIBUTION_ID \
-      #       --paths "/*"
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id EU8GMH938PXCS \
+            --paths "/*"
